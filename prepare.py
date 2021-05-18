@@ -139,7 +139,7 @@ def clean_content(df, column, extra_words=[], exclude_words=[]):
     df.language = df.language.replace('Jupyter Notebook', 'Python')
 
     #remove languages with 9 or less value_counts
-    df = df.groupby('language').filter(lambda x : len(x) >= 9)
+    df = df.groupby('language').filter(lambda x : len(x) >= 5)
 
     return df[['repo', 'clean_content', column, 'language']]
 
